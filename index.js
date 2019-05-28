@@ -99,4 +99,4 @@ server.put('/api/users/:id', (req, res) => {
 
 server.listen(5000, () =>
   console.log('Server running on http://localhost:5000')
-)
+);
