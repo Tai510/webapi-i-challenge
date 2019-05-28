@@ -7,10 +7,6 @@ exports.seed = function(knex) {
           name: 'Samwise Gamgee',
           bio: 'Gardener and poet. Married to Rose Cotton',
         },
-        {
-          name: 'Tashi Woeser',
-          bio: 'Ankle Breaker. Parking Lot Range',
-        },
       ]);
     });
 };
