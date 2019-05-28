@@ -31,6 +31,14 @@ server.get("/api/users/:id" , (req, res) => {
     })
 })
 
+server.delete("/api/users/:id" , (req, res) => {
+    db.remove(req.params.id).then((data) => {
+        res.json({ data });
+    }).catch(() => {
+        res.statusCode(500).send({ error: "The user could not be removed" })
+    })
+})
+
 server.listen(5000, () =>
   console.log('Server running on http://localhost:5000')
 );
