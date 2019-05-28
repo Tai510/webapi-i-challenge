@@ -23,6 +23,14 @@ server.get("/api/users" , (req, res) => {
     })
 })
 
+server.get("/api/users/:id" , (req, res) => {
+    db.findById(req.params.id).then((data) => {
+        res.json({ data });
+    }).catch(() => {
+        res.statusCode(500).send({ error: "The user information could not be retrieved." })
+    })
+})
+
 server.listen(5000, () =>
   console.log('Server running on http://localhost:5000')
 );
