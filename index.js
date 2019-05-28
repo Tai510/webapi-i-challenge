@@ -39,6 +39,15 @@ server.delete("/api/users/:id" , (req, res) => {
     })
 })
 
+server.put("/api/users/:id" , (req, res) => {
+    db.update(req.params.id, req.body).then((data) => {
+        res.json({ data });
+    }).catch(() => {
+        res.statusCode(500).send({ error: "The user information could not be modified." })
+    })
+})
+
+
 server.listen(5000, () =>
   console.log('Server running on http://localhost:5000')
 );
